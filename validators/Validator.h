@@ -4,5 +4,5 @@
 class Validator
 {
 public:
-    virtual bool validate(std::string number) const = 0;   
+    virtual bool validate(std::string number) const = 0;
 };

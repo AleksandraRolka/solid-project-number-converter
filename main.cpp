@@ -1,14 +1,13 @@
 #include <iostream>
 #include <memory>
-#include "Converter.h"
-#include "ConversionsMapper.h"
+#include "converter/Converter.h"
+#include "converter/ConversionsMapper.h"
 #include "exceptions/InvalidNumberOfCommandLineArgsException.h"
 
-
-int main(int argc, char** argv)
+int main(int argc, char **argv)
 {
-    if (argc != 4) 
-        throw InvalidNumberOfCommandLineArgsException();  
+    if (argc != 4)
+        throw InvalidNumberOfCommandLineArgsException();
 
     std::string numberToConvert = argv[1];
     std::string fromType = argv[2];
@@ -16,7 +15,7 @@ int main(int argc, char** argv)
 
     std::unique_ptr<ConversionsMapper> mapper = std::make_unique<ConversionsMapper>();
     std::unique_ptr<ConversionStrategy> conversionStrategy = mapper->mapToConversionType(fromType, toType);
-    
+
     Converter converter = Converter(conversionStrategy);
     std::cout << converter.convert(numberToConvert) << "\n";
 

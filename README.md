@@ -25,7 +25,11 @@ A simple number converter allowing conversion from decimal number to binary or a
     ```
   - to execute main:
     ```
-    make run <value> <source_conversion_type> <target_conversion_type>
+    make run <value> <source_conversion_type> <*target_conviersion_type*>
+    ```
+    or :
+    ```
+    ./main <value> <source_conversion_type> <target_conversion_type>
     ```
     For example:
     ```
@@ -34,6 +38,10 @@ A simple number converter allowing conversion from decimal number to binary or a
   - to run unit tests:
     ```
     make ut
+    ```
+    or :
+    ```
+    ./ut/tests
     ```
 
 - conversion result is displayed on the screen
